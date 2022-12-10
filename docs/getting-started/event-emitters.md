@@ -35,7 +35,7 @@ const event_emitter = new interactwith.EventEmitter({
 });
 
 event_emitter.on('Minter.NftTransferred', (event) => {
-  
+  console.log(event);
 });
 ```
 
