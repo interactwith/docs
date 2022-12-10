@@ -1,8 +1,10 @@
 ---
+
 sidebar_position: 1
+
 ---
 
-# Tutorial Intro
+# Introduction
 
 InteractWith API is organized around GraphQL. Our API has predictable resource-oriented namings.
 
@@ -17,15 +19,5 @@ You can use InteractWith API through InteractWith SDK for the languages we suppo
 The base URL for the InteractWith API is:
 
 ```text
-https://api.interactwith.io/graphql
+https://api.interactwith.com/graphql
 ```
-
-## Getting Started
-
-
-
-## API key authentication
-
-
-
-## About Event Emitters

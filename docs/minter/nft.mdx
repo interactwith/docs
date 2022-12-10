@@ -1,0 +1,115 @@
+---
+
+sidebar_position: 3
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# NFTs
+
+After the NFT is minted in the checkout you can access it through couple queries. Due to immutability of NFTs - mutations on them are not possible. You can only query them. 
+
+### Select NFTs
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+import { InteractWith } from '@interactwith/node';
+
+const interactwith = new InteractWith({
+  apiKey: "API_KEY",
+});
+
+const nfts = await interactwith.minter.nfts.list({
+  pagination: {
+    page: 1,
+    take: 10,
+  },
+  sort: {
+    by_field: "created_at",
+    direction: "desc",
+  },
+  filter: {
+    checkout: "CHECKOUT_ID",
+  },
+});
+```
+
+</TabItem>
+<TabItem value="gql" label="GraphQL">
+
+```graphql
+query {
+  nfts(
+    filter: {
+      id: {
+        eq: "NFT_ID"
+      },
+      checkout: {
+        eq: "CHECKOUT_ID"
+      }
+    },
+    pagination: {
+      page: 1,
+      take: 10,
+    }
+  ) {
+    id
+    name
+    description
+    price
+    currency
+    project
+    metadata
+    created_at
+    updated_at
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+### Get NFT
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+import { InteractWith } from '@interactwith/node';
+
+const interactwith = new InteractWith({
+  apiKey: "API_KEY",
+})
+
+const nft = await interactwith.minter.nfts.get({
+  id: "NFT_ID",
+});
+```
+
+</TabItem>
+<TabItem value="gql" label="GraphQL">
+
+```graphql
+query {
+  nft(id: "NFT_ID") {
+    id
+    name
+    description
+    price
+    currency
+    project
+    metadata
+    created_at
+    updated_at
+  }
+}
+```
+
+</TabItem>
+
+</Tabs>
