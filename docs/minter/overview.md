@@ -15,3 +15,8 @@ Our architecture is also designed to provide streamed information to app develop
 When minting assets using the Minter API, you do not need to worry about paying any crypto fees or understanding the fees mechanism in each blockchain. We take care of all gas fees for you, and will charge a fee in fiat periodically for this service.
 
 However, if players prefer, they are also free to pay with crypto. Regardless of how they choose to pay, the minting process is quick and easy, and does not require any knowledge of the fees mechanism in different blockchains. We handle everything for you, so you can focus on creating exciting and engaging experiences for your users.
+
+Minter consists of two main essenses:
+
+- [Minter Checkouts](/docs/minter/checkouts) - a thing that allows users to mint assets in a special session with interface and payment. NFTs can only be created through a checkout.
+- [NFTs](/docs/minter/nfts) - an NFT itself that created through a checkout.
