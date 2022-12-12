@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'InteractWith',
   tagline: 'Forget about blockchain complexity',
-  url: 'https://docs.interactwith.com',
+  url: 'https://developers.interactwith.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'InteractWith', // Usually your GitHub org/user name.
   projectName: 'InteractWith', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -58,13 +58,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'getting-started/intro',
+            docId: 'api/getting-started/intro',
             position: 'left',
-            label: 'Docs',
+            label: 'API',
           },
           {
             type: 'doc',
-            docId: 'getting-started/intro',
+            docId: 'tutorials/intro',
             position: 'left',
             label: 'Tutorials',
           },

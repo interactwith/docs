@@ -1,0 +1,65 @@
+---
+
+sidebar_position: 2
+
+---
+
+# Minting an NFT
+
+In this tutorial, we will mint an NFT using the InteractWith API. We will use the `@interactwith/node` package to interact with the API.
+
+## Create InteractWith client
+
+To interact with the InteractWith API, you need to create an InteractWith client. You can create an InteractWith client using the `InteractWith` constructor from the `@interactwith/node` package.
+
+```js
+const { InteractWith } = require("@interactwith/node");
+
+const interactWith = new InteractWith({
+  apiKey: "YOUR_API_KEY"
+});
+```
+
+## Creating a Minter Checkout
+
+To mint an NFT, you need to create a Minter Checkout. You can create a Minter Checkout using the `minter_checkout.create()` method from the InteractWith client.
+
+```js
+const minterCheckout = await interactWith.minter_checkout.create({
+  name: "My NFT",
+  description: "My NFT description",
+  image: "https://example.com/my-nft.png",
+  external_url: "https://example.com/my-nft",
+  attributes: [
+    {
+      trait_type: "Background",
+      value: "Blue",
+    },
+  ],
+});
+```
+
+:::tip
+
+If you are using some of testnets (e.g. Goerli), the checkout will be fake (free).
+
+:::
+
+## Going through the Minter Checkout flow
+
+After creating a Minter Checkout, you can go through the Minter Checkout flow by redirecting the user to the `url` property of the Minter Checkout. Lets go through the flow instead of user. You will see something similar to this:
+
+![Minter Checkout flow](/img/minter-flow.png)
+
+## Tracking when the NFT is minted
+
+After the user has completed the Minter Checkout flow, you can track when the NFT is minted by using the [EventEmitter API](/docs/api/event-emitter). You can listen for the `nft_minted` event using the `on()` method from the InteractWith client.
+
+```js
+interactwith.on("nft_minted", (nft) => {
+  console.log("NFT minted", nft);
+});
+```
+
+But thats very basic tracking. See next page for more detailed tracking.
+

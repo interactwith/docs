@@ -4,6 +4,8 @@ sidebar_position: 6
 
 ---
 
+import JsExample from '@site/src/components/codeblocks/JsExample';
+
 # About Event Emitters
 
 Event Emitters are somekind of an instance that is responsible for consistency between InteractWith and your backend. It is a way to notify your backend about some events that happen on InteractWith. For example when some NFT is transferred to another wallet the Event Emitter will notify your backend about this event and wait until your backend confirms that the event was processed. If your backend confirms that the event was processed, the Event Emitter will mark the event as processed and will not notify your backend about this event again. If your backend does not confirm that the event was processed, the Event Emitter will notify your backend about this event again after some time.
@@ -23,13 +25,9 @@ Websocket Event Emitters are Event Emitters that notify your backend about event
 
 **Example:**
 
-```js
-const { InteractWith } = require('@interactwith/node');
+<JsExample>
 
-const interactwith = new Interact({
-  apiKey: 'API_KEY',
-})
-
+```
 const event_emitter = new interactwith.EventEmitter({
   event_emitter_id: 'EVENT_EMITTER_ID',
 });
@@ -38,6 +36,8 @@ event_emitter.on('Minter.NftTransferred', (event) => {
   console.log(event);
 });
 ```
+
+</JsExample>
 
 :::tip
 

@@ -6,6 +6,8 @@ sidebar_position: 3
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import JsExample from '@site/src/components/codeblocks/JsExample';
+import GqlExample from '@site/src/components/codeblocks/GqlExample';
 
 # NFTs
 
@@ -15,14 +17,9 @@ After the NFT is minted in the checkout you can access it through couple queries
 
 <Tabs>
 <TabItem value="js" label="JavaScript">
+<JsExample>
 
-```js
-import { InteractWith } from '@interactwith/node';
-
-const interactwith = new InteractWith({
-  apiKey: "API_KEY",
-});
-
+```
 const nfts = await interactwith.minter.nfts.list({
   pagination: {
     page: 1,
@@ -38,78 +35,29 @@ const nfts = await interactwith.minter.nfts.list({
 });
 ```
 
+</JsExample>
 </TabItem>
 <TabItem value="gql" label="GraphQL">
-
-```graphql
-query {
-  nfts(
-    filter: {
-      id: {
-        eq: "NFT_ID"
-      },
-      checkout: {
-        eq: "CHECKOUT_ID"
-      }
-    },
-    pagination: {
-      page: 1,
-      take: 10,
-    }
-  ) {
-    id
-    name
-    description
-    price
-    currency
-    project
-    metadata
-    created_at
-    updated_at
-  }
-}
-```
-
+<GqlExample resource="DassetsNft" method="select"/>
 </TabItem>
-
 </Tabs>
 
 ### Get NFT
 
 <Tabs>
 <TabItem value="js" label="JavaScript">
+<JsExample>
 
-```js
-import { InteractWith } from '@interactwith/node';
-
-const interactwith = new InteractWith({
-  apiKey: "API_KEY",
-})
-
+```
 const nft = await interactwith.minter.nfts.get({
   id: "NFT_ID",
 });
 ```
 
+</JsExample>
 </TabItem>
 <TabItem value="gql" label="GraphQL">
-
-```graphql
-query {
-  nft(id: "NFT_ID") {
-    id
-    name
-    description
-    price
-    currency
-    project
-    metadata
-    created_at
-    updated_at
-  }
-}
-```
-
+<GqlExample resource="DassetsNft" method="get"/>
 </TabItem>
 
 </Tabs>

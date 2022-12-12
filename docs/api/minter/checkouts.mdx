@@ -1,0 +1,64 @@
+---
+
+sidebar_position: 2
+
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import JsExample from '@site/src/components/codeblocks/JsExample';
+import GqlExample from '@site/src/components/codeblocks/GqlExample';
+
+
+# Minter Checkouts
+
+Minter Checkout is the entry for NFTs. It is used for minting project's NFTs.
+
+### Create a checkout
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+<JsExample>
+
+```
+const checkout = await interactwith.minter.minter_checkouts.create({
+  name: 'Checkout 1',
+  description: 'Checkout 1 description',
+  price: 100,
+  currency: 'USD',
+  project: 'PROJECT_ID',
+  metadata: {
+    name: 'Checkout 1',
+    description: 'Checkout 1 description',
+    image: 'https://example.com/image.png',
+  },
+})
+```
+
+</JsExample>
+</TabItem>
+<TabItem value="gql" label="GraphQL">
+<GqlExample resource="DassetsCheckoutSession" method="create"/>
+</TabItem>
+
+</Tabs>
+
+### Get a checkout
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+<JsExample>
+
+```
+const checkout = await interactwith.minter.minter_checkouts.get({
+  id: "CHECKOUT_ID",
+});
+```
+
+</JsExample>
+</TabItem>
+<TabItem value="gql" label="GraphQL">
+<GqlExample resource="DassetsCheckoutSession" method="get"/>
+</TabItem>
+
+</Tabs>

@@ -1,0 +1,73 @@
+---
+
+sidebar_position: 4
+
+---
+
+# Events List
+
+Using [Event Emitters](/docs/getting-started/event-emitters) you can listen for events that are triggered by the API.
+
+The events coming from Event Emitters includes payload as an object of an NFT that was affected.
+
+:::tip
+
+An `id` field is the unique identifier of the event, you can use it as an idempotency key to avoid double processing of the same event.
+
+:::
+
+### Minter.NftTransferred
+
+Emits after NFT transferred through transfer() and batchTransfer() ERC1155 contract methods.
+
+```json
+{
+  "id": "0x0000000000000000000000000000000000000000",
+  "name": "Dassets.NftMinted",
+  "payload": {
+    "id": "0x0000000000000000000000000000000000000000",
+    "project": "",
+    "owner": "0x0000000000000000000000000000000000000000",
+    "mint_tx": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "network": "eth",
+    "token_id": 234,
+    "owner_synced_at": 19493920956,
+    "mint_request_id": ""
+  },
+  "metadata": {
+    "from_address": "0x0000000000000000000000000000000000000000",
+    "block_timestamp": 1670745356881,
+    "block_number": 19493920956,
+    "transaction_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "global_index": 194939209560000000
+  }
+}
+```
+
+### Minter.NftMinted
+
+Emits after the NFT minted (using checkout)
+
+```json
+{
+  "id": "0x0000000000000000000000000000000000000000",
+  "name": "Dassets.NftMinted",
+  "payload": {
+    "id": "0x0000000000000000000000000000000000000000",
+    "project": "",
+    "owner": "0x0000000000000000000000000000000000000000",
+    "mint_tx": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "network": "eth",
+    "token_id": 234,
+    "owner_synced_at": 19493920956,
+    "mint_request_id": ""
+  },
+  "metadata": {
+    "from_address": "0x0000000000000000000000000000000000000000",
+    "block_timestamp": 1670745356881,
+    "block_number": 19493920956,
+    "transaction_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "global_index": 194939209560000000
+  }
+}
+```
