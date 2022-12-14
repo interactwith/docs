@@ -18,24 +18,7 @@ Minter Checkout is the entry for NFTs. It is used for minting project's NFTs.
 
 <Tabs>
 <TabItem value="js" label="JavaScript">
-<JsExample>
-
-```
-const checkout = await interactwith.minter.minter_checkouts.create({
-  name: 'Checkout 1',
-  description: 'Checkout 1 description',
-  price: 100,
-  currency: 'USD',
-  project: 'PROJECT_ID',
-  metadata: {
-    name: 'Checkout 1',
-    description: 'Checkout 1 description',
-    image: 'https://example.com/image.png',
-  },
-})
-```
-
-</JsExample>
+<JsExample resource="DassetsCheckoutSession" method="create"/>
 </TabItem>
 <TabItem value="gql" label="GraphQL">
 <GqlExample resource="DassetsCheckoutSession" method="create"/>
@@ -47,15 +30,7 @@ const checkout = await interactwith.minter.minter_checkouts.create({
 
 <Tabs>
 <TabItem value="js" label="JavaScript">
-<JsExample>
-
-```
-const checkout = await interactwith.minter.minter_checkouts.get({
-  id: "CHECKOUT_ID",
-});
-```
-
-</JsExample>
+<JsExample resource="DassetsCheckoutSession" method="get"/>
 </TabItem>
 <TabItem value="gql" label="GraphQL">
 <GqlExample resource="DassetsCheckoutSession" method="get"/>

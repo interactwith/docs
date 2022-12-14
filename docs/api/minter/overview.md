@@ -18,5 +18,5 @@ However, if players prefer, they are also free to pay with crypto. Regardless of
 
 Minter consists of two main essenses:
 
-- [Minter Checkouts](/docs/minter/checkouts) - a thing that allows users to mint assets in a special session with interface and payment. NFTs can only be created through a checkout.
-- [NFTs](/docs/minter/nfts) - an NFT itself that created through a checkout.
+- [Minter Checkouts](/docs/api/minter/checkouts) - a thing that allows users to mint assets in a special session with interface and payment. NFTs can only be created through a checkout.
+- [NFTs](/docs/api/minter/nfts) - an NFT itself that created through a checkout.

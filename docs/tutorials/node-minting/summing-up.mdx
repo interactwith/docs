@@ -1,0 +1,45 @@
+---
+
+sidebar_position: 4
+
+---
+
+import JsExample from '@site/src/components/codeblocks/JsExample.tsx'
+import CodeBlock from '@theme/CodeBlock';
+import { JS_EXAMPLE_IMPORT, JS_EXAMPLE_SDK, JS_EXAMPLE_SDK_VAR_NAME } from '@site/src/constants';
+import { toJs } from '@site/src/transformers/to-js';
+
+# Summing up
+
+We have now created a simple checkout flow that allows users to purchase an NFT.
+
+## Final code
+
+<CodeBlock language="js" showLineNumbers>
+{[
+  'const express = require("express");',
+  JS_EXAMPLE_IMPORT,
+  '',
+  'const app = express();',
+  'const port = 3000;',
+  '',
+  'app.get("/", (req, res) => {',
+  '  res.send("Hello World!");',
+  '});',
+  '',
+  'app.get("/create-checkout", async (req, res) => {',
+  '',
+  toJs('DassetsCheckoutSession', 'create', { indent: 1 }),
+  '  ',
+  '  res.redirect(dassets_checkout_session.url);',
+  '});',
+  '',
+  `${JS_EXAMPLE_SDK_VAR_NAME}.on("Minter.NftMinted", (event) => {`,
+  '  console.log("NFT minted", event.payload);',
+  '});',
+  '',
+  'app.listen(port, () => {',
+  '  console.log(`Example app listening at http://localhost:${port}`);',
+  '});'
+].join('\n')}
+</CodeBlock>

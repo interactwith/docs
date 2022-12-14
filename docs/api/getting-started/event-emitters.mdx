@@ -4,7 +4,7 @@ sidebar_position: 6
 
 ---
 
-import JsExample from '@site/src/components/codeblocks/JsExample';
+import CodeBlock from '@theme/CodeBlock';
 
 # About Event Emitters
 
@@ -25,19 +25,17 @@ Websocket Event Emitters are Event Emitters that notify your backend about event
 
 **Example:**
 
-<JsExample>
-
-```
-const event_emitter = new interactwith.EventEmitter({
-  event_emitter_id: 'EVENT_EMITTER_ID',
-});
-
-event_emitter.on('Minter.NftTransferred', (event) => {
-  console.log(event);
-});
-```
-
-</JsExample>
+<CodeBlock language="js">
+{[
+  'const event_emitter = new interactwith.EventEmitter({',
+  '  event_emitter_id: "EVENT_EMITTER_ID",',
+  '});',
+  '',
+  'event_emitter.on("Minter.NftTransferred", (event) => {',
+  '  console.log(event);',
+  '});',
+].join('\n')}
+</CodeBlock>
 
 :::tip
 

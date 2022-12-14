@@ -1,8 +1,13 @@
 ---
 
-sidebar_position: 2
+sidebar_position: 3
 
 ---
+
+import JsExample from '@site/src/components/codeblocks/JsExample.tsx'
+import CodeBlock from '@theme/CodeBlock';
+import { JS_EXAMPLE_IMPORT, JS_EXAMPLE_SDK, JS_EXAMPLE_SDK_VAR_NAME } from '@site/src/constants';
+import { toJs } from '@site/src/transformers/to-js';
 
 # Minting an NFT
 
@@ -12,54 +17,61 @@ In this tutorial, we will mint an NFT using the InteractWith API. We will use th
 
 To interact with the InteractWith API, you need to create an InteractWith client. You can create an InteractWith client using the `InteractWith` constructor from the `@interactwith/node` package.
 
-```js
-const { InteractWith } = require("@interactwith/node");
-
-const interactWith = new InteractWith({
-  apiKey: "YOUR_API_KEY"
-});
-```
+<CodeBlock language="js">
+{ JS_EXAMPLE_IMPORT + '\n\n' + JS_EXAMPLE_SDK }
+</CodeBlock>
 
 ## Creating a Minter Checkout
 
-To mint an NFT, you need to create a Minter Checkout. You can create a Minter Checkout using the `minter_checkout.create()` method from the InteractWith client.
+To mint an NFT, you need to create a Minter Checkout. You can create a Minter Checkout using the `create()` method from the InteractWith client.
 
-```js
-const minterCheckout = await interactWith.minter_checkout.create({
-  name: "My NFT",
-  description: "My NFT description",
-  image: "https://example.com/my-nft.png",
-  external_url: "https://example.com/my-nft",
-  attributes: [
-    {
-      trait_type: "Background",
-      value: "Blue",
+<CodeBlock language="js">
+{[
+  'app.get("/create-checkout/:id", async (req, res) => {',
+  '  const item = db.items.find((item) => item.id === req.params.id);',
+  '',
+  toJs('DassetsCheckoutSession', 'create', {
+    indent: 1,
+    values: {
+      'data.asset_info.id': 1,
+      'data.asset_info.name': "item.name",
+      'data.asset_info.description': "item.description",
+      'data.asset_info.image_url': "item.image",
     },
-  ],
-});
-```
+  }),
+  '  ',
+  '  res.redirect(dassets_checkout_session.url);',
+  '});'
+].join('\n')}
+</CodeBlock>
 
-:::tip
-
-If you are using some of testnets (e.g. Goerli), the checkout will be fake (free).
-
-:::
+After checkout is created you can redirect the user to the `url` property of the Minter Checkout.
 
 ## Going through the Minter Checkout flow
 
-After creating a Minter Checkout, you can go through the Minter Checkout flow by redirecting the user to the `url` property of the Minter Checkout. Lets go through the flow instead of user. You will see something similar to this:
+Now lets test the app route we just created. Enter `http://localhost:3000/create-checkout` in your browser. You will see something similar to this:
 
-![Minter Checkout flow](/img/minter-flow.png)
+![Minter Checkout flow](https://blog.webdevsimplified.com/articleAssets/2021-07/stripe-checkout/stripe-checkout.jpg)
+
+:::info
+
+If you are using some of testnets (e.g. Goerli), the checkout will be free (the payment process will be fake and will not charge anything).
+
+:::
 
 ## Tracking when the NFT is minted
 
-After the user has completed the Minter Checkout flow, you can track when the NFT is minted by using the [EventEmitter API](/docs/api/event-emitter). You can listen for the `nft_minted` event using the `on()` method from the InteractWith client.
+After the user has completed the Minter Checkout flow, you can track when the NFT is minted by using the [EventEmitter API](/docs/api/getting-started/event-emitters). You can listen for the `nft_minted` event using the `on()` method from the InteractWith SDK.
 
-```js
-interactwith.on("nft_minted", (nft) => {
-  console.log("NFT minted", nft);
-});
-```
+Just after we catched the event we should update the item owner and mark the item as minted.
 
-But thats very basic tracking. See next page for more detailed tracking.
+<CodeBlock language="js">
+{[
+  `${JS_EXAMPLE_SDK_VAR_NAME}.on("Minter.NftMinted", (event) => {`,
+  '  const item = db.items.find((item) => item.id === event.payload.asset_id);',
+  '  item.is_minted = true;',
+  '  item.owner = event.payload.owner;',
+  '});'
+].join('\n')}
+</CodeBlock>
 

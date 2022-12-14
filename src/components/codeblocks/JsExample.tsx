@@ -1,25 +1,25 @@
 import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
-import Children from 'react-children-utilities'
 import { getSchemaAggregated } from '@site/src/transformers/helpers';
 import { toGql } from '@site/src/transformers/to-gql';
+import { toJs } from '@site/src/transformers/to-js';
+import { JS_EXAMPLE_IMPORT, JS_EXAMPLE_SDK } from '@site/src/constants';
 
 export default function JsExample(props): JSX.Element {
 
-  const children = Children.onlyText(props.children);
+  const resource: string = props.resource;
+  const method: string = props.method;
   
   const code = [
-    `import { InteractWith } from "@interactwith/node";`,
+    JS_EXAMPLE_IMPORT,
     ``,
-    `const interactWith = new InteractWith({`,
-    `  apiKey: "API_KEY",`,
-    `});`,
+    JS_EXAMPLE_SDK,
     ``,
-    children
+    toJs(resource, method)
   ].join('\n');
   
   return (
-    <CodeBlock language="js">
+    <CodeBlock language="js" showLineNumbers>
       { code }
     </CodeBlock>
   );
