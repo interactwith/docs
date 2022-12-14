@@ -4,9 +4,13 @@ sidebar_position: 1
 
 ---
 
-# Overview
+# Before start
 
-In this tutorial, you will learn how to mint your first NFT using Minter API. You will mint an NFT on the Ethereum network. After minting you will need to track the NFT movement on the blockchain. You will use the [EventEmitter API](/docs/api/event-emitters) to track the events.
+In this tutorial, you will learn how to mint your first NFT using Minter API. You will mint an NFT on the Goerli network. After minting you will need to track the NFT movement on the blockchain using [EventEmitter API](/docs/api/getting-started/event-emitters).
+
+## Legenda
+
+We will imagine that we are creating some kind of a game. In this game, we have items that can be minted to an NFT. 
 
 ## Prerequisites
 
