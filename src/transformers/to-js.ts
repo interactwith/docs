@@ -33,7 +33,14 @@ export function toJs(resource: string, method: string, opts: ToJsOpts = {}): str
 
   const indent_str = '  '.repeat(indent);
 
-  const args = schema.args.map(n => `{\n${recursiveParseToJsArgs(n.field, 1 + indent, values, n.name)}\n${indent_str}}`).join(', ');  
+  const args = schema.args.map(n => {
+
+    if(n.fields) {
+      return `{\n${recursiveParseToJsArgs(n.fields, 1 + indent, values, n.name)}\n${indent_str}}`
+    } else {
+      return `${n.test_value}`
+    }
+  }).join(', ');
 
   const code = [
     `${indent_str}const ${snaked_resource} = await ${JS_EXAMPLE_SDK_VAR_NAME}.${snaked_resource}.${method}(${args});`,
@@ -44,30 +51,30 @@ export function toJs(resource: string, method: string, opts: ToJsOpts = {}): str
 };
 
 
-function recursiveParseToJsArgs(field: any, level = 0, values: any = {}, path: string = ''): string {
+function recursiveParseToJsArgs(fields: any[], level = 0, values: any = {}, path: string = ''): string {
 
   const indent = '  '.repeat(level);
 
-  const new_path = (path.length ? path + '.' : '') + field.name;
+  return fields.map(field => {
 
-  if(field.fields) {
+    const new_path = (path.length ? path + '.' : '') + field.name;
 
-    return field.fields.map(field => {
+    if(field.fields) {
 
-      return `${indent}${field.name}: {\n${recursiveParseToJsArgs(field, level + 1, values, new_path)}\n${indent}}`;
+      return `${indent}${field.name}: {\n${recursiveParseToJsArgs(field.fields, level + 1, values, new_path)}\n${indent}}`;
 
-    }).join('\n');
-  } else {
-    
-    let value = values[new_path];
-        
-    if(values[new_path]) {
-      value = values[new_path];
     } else {
-      value = field.test_value;
+
+      let value = values[new_path];
+
+      if(values[new_path]) {
+        value = values[new_path];
+      } else {
+        value = field.test_value;
+      }
+
+      return indent + field.name + ': ' + value;
     }
 
-    return indent + field.name + ': ' + value;
-  }
-
+  }).join('\n');
 }

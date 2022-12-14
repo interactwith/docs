@@ -623,7 +623,7 @@ export const schema = {
       "type": "ScalarTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": "A network scalar. See https://developers.interactwith.com/docs/getting-started/supported-chains for the full list of supported networks. (example: \"eth\")",
+        "value": "A network scalar. See https://docs.interactwith.com/docs/getting-started/supported-chains for the full list of supported networks. (example: \"eth\")",
         "block": true,
         "loc": {
           "start": 896,

@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'InteractWith',
   tagline: 'Forget about blockchain complexity',
-  url: 'https://developers.interactwith.com',
+  url: 'https://docs.interactwith.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

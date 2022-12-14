@@ -11,7 +11,7 @@ import { toJs } from '@site/src/transformers/to-js';
 
 # Summing up
 
-We have now created a simple checkout flow that allows users to purchase an NFT.
+We have now created a simple checkout flow that allows users to mint your item to an NFT.
 
 ## Final code
 
@@ -29,7 +29,15 @@ We have now created a simple checkout flow that allows users to purchase an NFT.
   '',
   'app.get("/create-checkout", async (req, res) => {',
   '',
-  toJs('DassetsCheckoutSession', 'create', { indent: 1 }),
+  toJs('DassetsCheckoutSession', 'create', {
+    indent: 1,
+    values: {
+      'data.asset_info.id': 1,
+      'data.asset_info.name': "item.name",
+      'data.asset_info.description': "item.description",
+      'data.asset_info.image_url': "item.image",
+    },
+  }),
   '  ',
   '  res.redirect(dassets_checkout_session.url);',
   '});',
