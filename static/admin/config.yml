@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: static/cmsi
+public_folder: /cmsi
+
+collections:
+  - name: 'whitepaper-sections'
+    label: 'Whitepaper Sections'
+    folder: 'technical/whitepaper-sections'
+    format: 'frontmatter'
+    create: true
+    slug: '{{position}}-{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'number' }
+      # - { label: 'Tab', name: 'tab', widget: 'relation', collection: 'blogTabs', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
+      # - { label: "Post type", name: "post_type", widget: "select", options: [ 'updates', 'events', 'tutorials']}
+      # - { label: 'Description', name: 'description', widget: 'text' }
+      # - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'whitepaper-pages'
+    label: 'Whitepaper Pages'
+    folder: 'docs/whitepaper/{{section}}'
+    format: 'frontmatter'
+    create: true
+    slug: '{{section}}-{{position}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'number' }
+      - { label: 'Section', name: 'section', widget: 'relation', collection: 'whitepaper-sections', search_fields: ['title'], value_field: 'slug', display_fields: ['title'] }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
