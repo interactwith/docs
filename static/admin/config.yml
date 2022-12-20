@@ -10,10 +10,10 @@ collections:
   - name: 'whitepaper-sections'
     label: 'Whitepaper Sections'
     folder: 'docs/whitepaper'
-    path: '{{slug}}/_category_.yml'
+    path: '{{slug}}/_category_'
     create: true
     slug: '{{position}}-{{slug}}'
-    extension: yaml
+    extension: yml
     identifier_field: label
     fields:
       - { label: 'Title', name: 'label', widget: 'string' }
