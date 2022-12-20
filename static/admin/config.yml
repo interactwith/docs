@@ -7,6 +7,16 @@ media_folder: static/cmsi
 public_folder: /cmsi
 
 collections:
+  - label: "Single Pages"
+    name: "pages"
+    files:
+      - label: "Introduction Page"
+        name: "introduction"
+        file: "docs/whitepaper/0-intro.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Body, name: body, widget: markdown}
+
   - name: 'whitepaper-sections'
     label: 'Whitepaper Sections'
     folder: 'docs/whitepaper'
