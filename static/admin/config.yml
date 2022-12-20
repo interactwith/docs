@@ -43,7 +43,7 @@ collections:
     folder: 'docs/whitepaper'
     path: '{{section}}/{{slug}}'
     format: 'frontmatter'
-    summary: '[{{section}}] {{title}}'
+    summary: '{{section}} - {{title}}'
     create: true
     slug: '{{sidebar_position}}-{{slug}}'
     filter: { field: "is_dynamic", value: true }
