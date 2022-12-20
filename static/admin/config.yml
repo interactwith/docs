@@ -12,13 +12,12 @@ collections:
     folder: 'docs/whitepaper'
     path: '{{custom_slug}}/_category_'
     create: true
-    slug: '{{position}}-{{custom_slug}}'
+    slug: '{{custom_slug}}'
     extension: yml
     identifier_field: label
     fields:
       - { label: 'Title', name: 'label', widget: 'string' }
       - { label: 'Slug', name: 'custom_slug', widget: 'string' }
-      - { label: 'Position', name: 'position', widget: 'number' }
       # - { label: 'Tab', name: 'tab', widget: 'relation', collection: 'blogTabs', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
       # - { label: "Post type", name: "post_type", widget: "select", options: [ 'updates', 'events', 'tutorials']}
       # - { label: 'Description', name: 'description', widget: 'text' }
