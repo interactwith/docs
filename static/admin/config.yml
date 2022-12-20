@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: open-interact/docs
+  repo: interactwith/docs
   branch: main
 
 media_folder: static/cmsi
