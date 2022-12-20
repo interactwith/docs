@@ -23,7 +23,8 @@ collections:
 
   - name: 'whitepaper-pages'
     label: 'Whitepaper Pages'
-    folder: 'docs/whitepaper/{{section}}'
+    folder: 'docs/whitepaper'
+    path: '{{section}}/{{slug}}'
     format: 'frontmatter'
     create: true
     slug: '{{section}}-{{position}}-{{slug}}'
