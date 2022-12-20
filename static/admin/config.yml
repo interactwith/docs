@@ -32,5 +32,5 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'number' }
-      - { label: 'Section', name: 'section', widget: 'relation', collection: 'whitepaper-sections', search_fields: ['title'], value_field: 'slug', display_fields: ['title'] }
+      - { label: 'Section', name: 'section', widget: 'relation', collection: 'whitepaper-sections', search_fields: ['title'], value_field: '{{slug}}', display_fields: ['title'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
