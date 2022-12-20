@@ -45,12 +45,12 @@ collections:
     format: 'frontmatter'
     create: true
     slug: '{{sidebar_position}}-{{slug}}'
-    filter: { field: "dynamic", value: true }
+    filter: { field: "is_dynamic", value: true }
     editor:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Position', name: 'sidebar_position', widget: 'number' }
-      - { label: 'Dynamic', name: 'dynamic', widget: 'hidden', default: true }
+      - { label: 'Dynamic', name: 'is_dynamic', widget: 'hidden', default: true }
       - { label: 'Section', name: 'section', widget: 'relation', collection: 'whitepaper-sections', search_fields: ['label'], value_field: 'customProps.customSlug', display_fields: ['label'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
