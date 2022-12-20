@@ -10,7 +10,7 @@ collections:
   - name: 'whitepaper-sections'
     label: 'Whitepaper Sections'
     folder: 'docs/whitepaper'
-    path: '{{customProps.customSlug}}/_category_'
+    path: '{{slug}}/_category_'
     create: true
     slug: '{{customProps.customSlug}}'
     extension: yml
