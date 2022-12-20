@@ -9,12 +9,14 @@ public_folder: /cmsi
 collections:
   - name: 'whitepaper-sections'
     label: 'Whitepaper Sections'
-    folder: 'technical/whitepaper-sections'
-    format: 'frontmatter'
+    folder: 'docs/whitepaper'
+    path: '{{slug}}/_category_.yml'
     create: true
-    slug: '{{position}}-{{title}}'
+    slug: '{{position}}-{{slug}}'
+    extension: yaml
+    identifier_field: label
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Title', name: 'label', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'number' }
       # - { label: 'Tab', name: 'tab', widget: 'relation', collection: 'blogTabs', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
       # - { label: "Post type", name: "post_type", widget: "select", options: [ 'updates', 'events', 'tutorials']}
