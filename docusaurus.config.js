@@ -37,7 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/interactwith/docs/blob/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -58,7 +58,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'api/getting-started/intro',
+            docId: 'whitepaper/intro',
+            position: 'left',
+            label: 'Whitepaper',
+          },
+          {
+            type: 'doc',
+            docId: 'api/intro',
             position: 'left',
             label: 'API',
           },
@@ -70,7 +76,7 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/interactwith/docs',
             label: 'GitHub',
             position: 'right',
           },

@@ -12,7 +12,7 @@ collections:
     folder: 'technical/whitepaper-sections'
     format: 'frontmatter'
     create: true
-    slug: '{{position}}-{{slug}}'
+    slug: '{{position}}-{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'number' }
