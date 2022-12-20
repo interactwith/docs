@@ -10,13 +10,14 @@ collections:
   - name: 'whitepaper-sections'
     label: 'Whitepaper Sections'
     folder: 'docs/whitepaper'
-    path: '{{slug}}/_category_'
+    path: '{{custom_slug}}/_category_'
     create: true
-    slug: '{{position}}-{{slug}}'
+    slug: '{{position}}-{{custom_slug}}'
     extension: yml
     identifier_field: label
     fields:
       - { label: 'Title', name: 'label', widget: 'string' }
+      - { label: 'Slug', name: 'custom_slug', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'number' }
       # - { label: 'Tab', name: 'tab', widget: 'relation', collection: 'blogTabs', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
       # - { label: "Post type", name: "post_type", widget: "select", options: [ 'updates', 'events', 'tutorials']}
@@ -35,5 +36,5 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Position', name: 'position', widget: 'number' }
-      - { label: 'Section', name: 'section', widget: 'relation', collection: 'whitepaper-sections', search_fields: ['label'], value_field: '{{slug}}', display_fields: ['label'] }
+      - { label: 'Section', name: 'section', widget: 'relation', collection: 'whitepaper-sections', search_fields: ['label'], value_field: 'custom_slug', display_fields: ['label'] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
