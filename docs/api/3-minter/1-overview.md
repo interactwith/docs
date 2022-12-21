@@ -1,9 +1,3 @@
----
-
-sidebar_position: 1
-
----
-
 # Minter Overview
 
 If you have a game and want to allow your players to mint digital assets on the blockchain, you can use the Minter API to do this quickly and easily. With just one request to our API, you can mint your players' assets and connect them to the blockchain.

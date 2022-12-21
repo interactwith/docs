@@ -1,9 +1,3 @@
----
-
-sidebar_position: 1
-
----
-
 # Before you start
 
 In this tutorial, you will learn how to mint your first NFT using the Minter API. You will mint an NFT on the Goerli network, and then track its movement on the blockchain using the [EventEmitter API](/docs/api/getting-started/event-emitters).

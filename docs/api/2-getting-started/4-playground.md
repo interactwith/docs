@@ -1,9 +1,3 @@
----
-
-sidebar_position: 4
-
----
-
 # GraphQL Playground
 
 For better developer experience, we provide a GraphQL Playground for you to interact with the API. You can find the GraphQL Playground at [https://api.interactwith.com/graphql](https://api.interactwith.com/graphql).

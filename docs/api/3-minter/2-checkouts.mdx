@@ -1,37 +1,33 @@
----
-
-sidebar_position: 3
-
----
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import JsExample from '@site/src/components/codeblocks/JsExample';
 import GqlExample from '@site/src/components/codeblocks/GqlExample';
 
-# NFTs
 
-After the NFT is minted in the checkout you can access it through couple queries. Due to immutability of NFTs - mutations on them are not possible. You can only query them. 
+# Minter Checkouts
 
-### Select NFTs
+Minter Checkout is the entry for NFTs. It is used for minting project's NFTs.
+
+### Create a checkout
 
 <Tabs>
 <TabItem value="js" label="JavaScript">
-<JsExample resource="DassetsNft" method="select"/>
+<JsExample resource="DassetsCheckoutSession" method="create"/>
 </TabItem>
 <TabItem value="gql" label="GraphQL">
-<GqlExample resource="DassetsNft" method="select"/>
+<GqlExample resource="DassetsCheckoutSession" method="create"/>
 </TabItem>
+
 </Tabs>
 
-### Get NFT
+### Get a checkout
 
 <Tabs>
 <TabItem value="js" label="JavaScript">
-<JsExample resource="DassetsNft" method="get"/>
+<JsExample resource="DassetsCheckoutSession" method="get"/>
 </TabItem>
 <TabItem value="gql" label="GraphQL">
-<GqlExample resource="DassetsNft" method="get"/>
+<GqlExample resource="DassetsCheckoutSession" method="get"/>
 </TabItem>
 
 </Tabs>

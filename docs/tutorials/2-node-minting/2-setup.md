@@ -1,9 +1,3 @@
----
-
-sidebar_position: 2
-
----
-
 # Project setup
 
 In order to follow this tutorial, you need to setup a Node.js project. You can use any IDE of your choice. In this tutorial, we will use VS Code.

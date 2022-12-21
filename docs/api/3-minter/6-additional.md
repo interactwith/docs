@@ -1,9 +1,3 @@
----
-
-sidebar_position: 6
-
----
-
 # Additional Resources
 
 This section contains additional resources that you will maybe find useful.
