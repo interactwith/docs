@@ -1,6 +1,6 @@
 ---
 title: InteractDashboard
-sidebar_position: 4
+sidebar_position: 1
 is_dynamic: true
 section: 0-products
 ---
