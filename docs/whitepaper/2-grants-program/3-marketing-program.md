@@ -10,8 +10,8 @@ The Marketing Grant Program is designed to attract the best marketers and influe
 
 The grant award is based on factors such as your market reach, relevant geographic locations, and the channels you use.
 
-![](marketingprogram.5a96d151f876c30d73e9.png)
-
 If you believe that you or your company are a good fit for the Marketing Grant Program, we invite you to apply by following the provided link. We look forward to working with you and helping you to drive the success of our company.
 
 L﻿INK TO PROGRAM QUESTIONAIRE IN WEBSITE
+
+![](marketingprogram.5a96d151f876c30d73e9.png)
