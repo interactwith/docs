@@ -28,16 +28,12 @@ To achieve our goals, we are focused on building a strong and talented team of w
 * Our tools and services provide a convenient and efficient way for developers to take advantage of web3 technology, enabling them to create innovative and engaging gaming experiences for their users.
 * Web3 technology can also enable new monetization models and revenue streams for developers and other forms of blockchain-based value exchange. This can provide new opportunities for developers to generate revenue from their applications and engage with their users in novel ways.
 
-## Us key pointss
-
 ## Users key points
 
 * Our products and services offer users a more stimulating, engaging, and rewarding way to interact with gaming applications and manage their assets.
 * This includes a social gamified wallet that makes it fun and rewarding to hold and manage NFTs and other blockchain-based assets.
 * We also provide tools and services that make it easy for users to create, trade, and use NFTs within games, providing a more immersive and engaging gaming experience.
 * Our products and services can provide users with a new and exciting way to interact with gaming applications and manage their digital assets, enabling them to participate in games and other online activities in a more engaging and rewarding way.
-
-
 
 ## Conclusion
 
