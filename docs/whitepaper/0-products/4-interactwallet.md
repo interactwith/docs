@@ -1,6 +1,6 @@
 ---
 title: InteractWallet
-sidebar_position: 4
+sidebar_position: 5
 is_dynamic: true
 section: 0-products
 ---
