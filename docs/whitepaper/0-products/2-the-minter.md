@@ -12,9 +12,7 @@ Minter is a service that streamlines the creation and management of non-fungible
 
 One of the standout features of Minter is its streamlined checkout system using both FIAT and cryptocurrency. This convenient system enables users to mint their in-game assets as NFTs on the blockchain quickly and easily. In fact, with this feature, users can mint their assets as NFTs in under 10 seconds. This convenient and efficient payment system is a key part of Minter's offering, making it easy for users to mint their assets and take advantage of the benefits of blockchain technology.
 
-
-
-## T﻿he Minter Example
+## T﻿he Minter use case example
 
 If you have a game and you want to allow your players to mint their digital assets on the blockchain, you can use InteractWith's API to do this quickly and easily. With just one request to our API, you can mint your players' assets and connect them to the blockchain.
 
@@ -28,7 +26,7 @@ However, if the players prefer, they are also free to pay with crypto. Regardles
 
 
 
-## C﻿ode Example
+## The Minter code example
 
 This code uses the `Dassets` class from the `@interact/dassets` module to mint an NFT (non-fungible token) on the blockchain. It creates a new `Dassets` instance by passing in an access key, and then calls the `mintNft()` method to mint the NFT. The `mintNft()` method takes an object containing the recipient's address, the local ID of the item being minted, and an idempotency key. After minting the NFT, the code sets up event listeners for `mint` and `transfer` events, which are fired when the NFT is minted or transferred to another wallet. When these events occur, the code updates the item's owner information in the database to reflect the changes on the blockchain.
 
@@ -45,9 +43,8 @@ This code uses the `Dassets` class from the `@interact/dassets` module to mint a
 });`
 
 `/`
-*`  you can use either EventListener-style 
-  or webhooks to listen for events
-`*
+*`you can use either EventListener-style 
+  or webhooks to listen for events`*
 
 `dassets_client.on('mint', ({
   token_id, // blockchain id of the item
