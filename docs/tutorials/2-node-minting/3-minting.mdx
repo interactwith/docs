@@ -5,11 +5,9 @@ import { toJs } from '@site/src/transformers/to-js';
 
 # Minting an NFT
 
-In this tutorial, we will mint an NFT using the InteractWith API. We will use the `@interactwith/node` package to interact with the API.
-
 ## Create InteractWith client
 
-To interact with the InteractWith API, you need to create an InteractWith client. You can create an InteractWith client using the `InteractWith` constructor from the `@interactwith/node` package.
+To interact with the InteractWith API, you need to create an `InteractWith` client. You can create an InteractWith client using the `InteractWith` constructor from the `@interactwith/node` package. This is done by importing the `InteractWith` constructor from the `@interactwith/node` package and then using it to create a new `InteractWith` client, passing in your API key and the network you want to use (in this case, the Goerli network).
 
 <CodeBlock language="js">
 { JS_EXAMPLE_IMPORT + '\n\n' + JS_EXAMPLE_SDK }
@@ -17,7 +15,9 @@ To interact with the InteractWith API, you need to create an InteractWith client
 
 ## Creating a Minter Checkout
 
-To mint an NFT, you need to create a Minter Checkout. You can create a Minter Checkout using the `create()` method from the InteractWith client.
+To mint an NFT, you need to create a Minter Checkout. You can create a Minter Checkout using the `create()` method from the InteractWith client. This method takes an object as its argument, which should contain information about the NFT you want to mint, such as its ID, name, description, and image URL. This information is passed in as part of the `asset_info` object.
+
+Once the Minter Checkout is created, we can redirect the user to the `url` property of the checkout session, which will take them through the Minter Checkout flow. This flow includes several steps, such as selecting a payment method and confirming the payment.
 
 <CodeBlock language="js">
 {[
@@ -43,13 +43,13 @@ After checkout is created you can redirect the user to the `url` property of the
 
 ## Going through the Minter Checkout flow
 
-Now lets test the app route we just created. Enter `http://localhost:3000/create-checkout` in your browser. You will see something similar to this:
+Now let's test the app route we just created. Enter `http://localhost:3000/create-checkout` in your browser. You will see something similar to this:
 
 ![Minter Checkout flow](https://blog.webdevsimplified.com/articleAssets/2021-07/stripe-checkout/stripe-checkout.jpg)
 
 :::info
 
-If you are using some of testnets (e.g. Goerli), the checkout will be free (the payment process will be fake and will not charge anything).
+If you are using one of the testnets (e.g. Goerli), the checkout will be free (the payment process will be fake and will not charge anything).
 
 :::
 
@@ -57,7 +57,7 @@ If you are using some of testnets (e.g. Goerli), the checkout will be free (the 
 
 After the user has completed the Minter Checkout flow, you can track when the NFT is minted by using the [EventEmitter API](/docs/api/getting-started/event-emitters). You can listen for the `nft_minted` event using the `on()` method from the InteractWith SDK.
 
-Just after we catched the event we should update the item owner and mark the item as minted.
+Just after we catch the event, we should update the item owner and mark the item as minted.
 
 <CodeBlock language="js">
 {[
@@ -69,3 +69,8 @@ Just after we catched the event we should update the item owner and mark the ite
 ].join('\n')}
 </CodeBlock>
 
+Now you know how to mint an NFT using the InteractWith API and track when it is minted using the EventEmitter API. You can use this information to create a game or any other application that involves minting and tracking NFTs.
+
+To learn more about the InteractWith API, check out the [API documentation](/api/intro).
+
+That's it for this tutorial. Thank you for following along!

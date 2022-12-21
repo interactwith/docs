@@ -1,10 +1,8 @@
 # Project setup
 
-In order to follow this tutorial, you need to setup a Node.js project. You can use any IDE of your choice. In this tutorial, we will use VS Code.
+Welcome to the project setup portion of this tutorial on minting your first NFT using the Minter API. In this section, we will guide you through the process of setting up a Node.js project and installing the necessary dependencies.
 
-## Create a Node.js project
-
-Create a new folder and initialize a node.js project in it.
+To start, let's create a new folder and initialize a Node.js project within it. To do this, open a terminal and enter the following commands:
 
 ```bash
 mkdir node-mint-nft
@@ -12,20 +10,15 @@ cd node-mint-nft
 npm init -y
 ```
 
-## Install dependencies
+This will create a new folder called `node-mint-nft` and initialize a Node.js project within it. The `-y` flag will accept all default values for the project initialization.
 
-Install the following dependencies:
-
-- `@interactwith/node` - to interact with InteractWith API
-- `express` - to serve the web application
+Next, we need to install the necessary dependencies. In this tutorial, we will be using the `@interactwith/node` package to interact with the InteractWith API and the `express` package to serve our web application. To install these dependencies, enter the following command in your terminal:
 
 ```bash
 npm install @interactwith/node express
 ```
 
-## Express server
-
-Create a new file `index.js` and add the following code:
+Now that we have our dependencies installed, let's create a new file called `index.js` and add some code to it. Specifically, we will be setting up an Express server that will listen for incoming requests on port 3000. To do this, add the following code to `index.js`:
 
 ```js showLineNumbers
 const express = require('express');
@@ -41,21 +34,18 @@ app.listen(port, () => {
 });
 ```
 
-Run the server:
+Now, run the server by entering the following command in your terminal:
 
 ```bash
 node index.js
 ```
 
-Open http://localhost:3000 in your browser. You should see `Hello World!` in your browser.
+With the server running, open [http://localhost:3000](http://localhost:3000) in your browser. You should see the message `Hello World!` displayed in your browser.
 
-## Mocking Databasea
-
-We need to store the NFTs somewhere. For this tutorial, we will use a simple array. Let's create a new variable `db` in beginning of `index.js` and fill it will test data:
+For the purposes of this tutorial, we will also need to create a simple database to store our NFTs. In this case, we will be using a simple array to store the NFTs. Add the following code to the beginning of `index.js` to create this array:
 
 ```js showLineNumbers
 const db = {
-  
   items: [
     {
       id: 1,
@@ -77,9 +67,7 @@ const db = {
 };
 ```
 
-## Project structure
-
-The project structure should look like this:
+Finally, let's take a look at the project structure to ensure that everything is set up correctly. Your project structure should look like this:
 
 ```text
 node-mint-nft
@@ -87,3 +75,5 @@ node-mint-nft
 ├── package.json
 └── package-lock.json
 ```
+
+With the project set up and the necessary dependencies installed, we are now ready to move on to the next step of minting our first NFT.
