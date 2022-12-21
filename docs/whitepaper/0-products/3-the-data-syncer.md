@@ -18,9 +18,7 @@ As shown in the diagram, the Data Syncer constantly track for new events from co
 
 ![](image-1-.png)
 
-
-
-## E﻿xample Usage
+## Data Syncer usage
 
 This code imports the `Syncer` class from the `@interact/syncer` module and creates a new `Syncer` instance by passing in an access key. It then sets up an event listener for the `Items.Transfer` event, which is fired when an item is transferred from one address to another on the blockchain. When this event occurs, the code retrieves the item by ID, updates its owner address, and saves the updated information to the database. This allows the app to track and monitor the movement of items on the blockchain and to keep its data in sync with the blockchain.
 
@@ -37,13 +35,13 @@ This code imports the `Syncer` class from the `@interact/syncer` module and crea
   { global_index, from_address, block_number, block_timestamp, transaction_hash }
 ) => {`
 
-`  // getting the item by id 
+`// getting the item by id 
   const item = await Item.findOne({ id: token_id });`
 
-`  // updating owner address
+`// updating owner address
   item.owner = to;`
 
-`  // saving the item
+`// saving the item
   await item.save();`
 
 `});`
@@ -78,13 +76,13 @@ After creating the event in the contract, you can start listening for it on your
   { global_index, from_address, block_number, block_timestamp, transaction_hash }
 ) => {`
 
-`  // getting the item by id 
+`// getting the item by id 
   const item = await Item.findOne({ id: item_id });`
 
-`  // updating durability
+`// updating durability
   item.durability = current_durability;`
 
-`  // saving the item
+`// saving the item
   await item.save();`
 
 `});`
