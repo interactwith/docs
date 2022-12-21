@@ -1,6 +1,6 @@
 ---
 title: The Data Syncer
-sidebar_position: 3
+sidebar_position: 4
 is_dynamic: true
 section: 0-products
 ---
