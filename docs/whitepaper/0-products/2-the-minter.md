@@ -1,6 +1,6 @@
 ---
 title: The Minter
-sidebar_position: 2
+sidebar_position: 3
 is_dynamic: true
 section: 0-products
 ---
