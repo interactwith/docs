@@ -3,6 +3,15 @@ export const schema = {
     "type": "ObjectTypeDefinition",
     "fields": [
       {
+        "name": "chain_networks",
+        "arguments": [],
+        "isDeprecated": false,
+        "noNull": true,
+        "isArray": true,
+        "noNullArrayValues": true,
+        "type": "ChainNetwork"
+      },
+      {
         "name": "me",
         "arguments": [],
         "isDeprecated": false,
@@ -21,7 +30,7 @@ export const schema = {
         "type": "User"
       },
       {
-        "name": "dassets_nfts",
+        "name": "minter_nfts",
         "arguments": [
           {
             "name": "filter",
@@ -29,17 +38,17 @@ export const schema = {
             "noNull": false,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "IDassetsNftsFilter"
+            "type": "IMinterNftsFilter"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": true,
         "noNullArrayValues": true,
-        "type": "DassetsNft"
+        "type": "MinterNft"
       },
       {
-        "name": "dassets_nft",
+        "name": "minter_nft",
         "arguments": [
           {
             "name": "id",
@@ -54,7 +63,7 @@ export const schema = {
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "DassetsNft"
+        "type": "MinterNft"
       },
       {
         "name": "syncer_events",
@@ -228,7 +237,7 @@ export const schema = {
         "type": "KeyBunch"
       },
       {
-        "name": "dassets_checkout_session",
+        "name": "minter_checkout_session",
         "arguments": [
           {
             "name": "id",
@@ -243,7 +252,7 @@ export const schema = {
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "DassetsCheckoutSession"
+        "type": "MinterCheckoutSession"
       }
     ],
     "values": [],
@@ -520,7 +529,7 @@ export const schema = {
         "type": "KeyBunch"
       },
       {
-        "name": "dassetsCheckoutSessionCreate",
+        "name": "minterCheckoutSessionCreate",
         "arguments": [
           {
             "name": "data",
@@ -528,17 +537,17 @@ export const schema = {
             "noNull": true,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "IDassetsCheckoutSessionCreate"
+            "type": "IMinterCheckoutSessionCreate"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "DassetsCheckoutSession"
+        "type": "MinterCheckoutSession"
       },
       {
-        "name": "dassetsCheckoutSessionUpdate",
+        "name": "minterCheckoutSessionUpdate",
         "arguments": [
           {
             "name": "id",
@@ -554,17 +563,17 @@ export const schema = {
             "noNull": true,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "IDassetsCheckoutSessionUpdate"
+            "type": "IMinterCheckoutSessionUpdate"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "DassetsCheckoutSession"
+        "type": "MinterCheckoutSession"
       },
       {
-        "name": "dassetsCheckoutSessionAttachStripePaymentIntent",
+        "name": "minterCheckoutSessionAttachStripePaymentIntent",
         "arguments": [
           {
             "name": "id",
@@ -579,7 +588,7 @@ export const schema = {
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "DassetsCheckoutSession"
+        "type": "MinterCheckoutSession"
       }
     ],
     "values": [],
@@ -607,11 +616,11 @@ export const schema = {
       "type": "ScalarTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": "A simple ObjectId scalar. (example: \"62d13a8b029b95001b881441\")",
+        "value": "A simple ObjectId scalar. (type: string) (example: \"62d13a8b029b95001b881441\")",
         "block": true,
         "loc": {
           "start": 386,
-          "end": 455
+          "end": 472
         }
       },
       "fields": [],
@@ -623,11 +632,11 @@ export const schema = {
       "type": "ScalarTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": "A network scalar. See https://docs.interactwith.com/docs/getting-started/supported-chains for the full list of supported networks. (example: \"eth\")",
+        "value": "A network scalar. See https://docs.interactwith.com/docs/getting-started/supported-chains for the full list of supported networks. (type: string) (example: \"eth\")",
         "block": true,
         "loc": {
-          "start": 896,
-          "end": 1057
+          "start": 1082,
+          "end": 1252
         }
       },
       "fields": [],
@@ -639,11 +648,11 @@ export const schema = {
       "type": "ScalarTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": "A simple Address parser (example: \"0x509016ec41c0F4b3072cA7c000034845163ECA0E\")",
+        "value": "A simple Address parser (type: string) (example: \"0x509016ec41c0F4b3072cA7c000034845163ECA0E\")",
         "block": true,
         "loc": {
-          "start": 1074,
-          "end": 1161
+          "start": 1269,
+          "end": 1371
         }
       },
       "fields": [],
@@ -655,11 +664,11 @@ export const schema = {
       "type": "ScalarTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": "A keccak256 scalar. (example: \"0xbbdf3616512df59a06f9c800ac8da843b3a0926340249b3910b18d7d64992124\")",
+        "value": "A keccak256 scalar. (type: string) (example: \"0xbbdf3616512df59a06f9c800ac8da843b3a0926340249b3910b18d7d64992124\")",
         "block": true,
         "loc": {
-          "start": 1178,
-          "end": 1285
+          "start": 1388,
+          "end": 1510
         }
       },
       "fields": [],
@@ -674,8 +683,8 @@ export const schema = {
         "value": "The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).",
         "block": true,
         "loc": {
-          "start": 1304,
-          "end": 1460
+          "start": 1529,
+          "end": 1685
         }
       },
       "fields": [],
@@ -687,11 +696,11 @@ export const schema = {
       "type": "ScalarTypeDefinition",
       "description": {
         "kind": "StringValue",
-        "value": "Void type (example: true)",
+        "value": "Void type (type: boolean) (example: true)",
         "block": true,
         "loc": {
-          "start": 5956,
-          "end": 5987
+          "start": 6190,
+          "end": 6237
         }
       },
       "fields": [],
@@ -819,6 +828,77 @@ export const schema = {
           "isArray": false,
           "noNullArrayValues": false,
           "type": "Boolean"
+        }
+      ],
+      "values": [],
+      "types": [],
+      "implementedTypes": []
+    },
+    "ChainNetwork": {
+      "type": "ObjectTypeDefinition",
+      "fields": [
+        {
+          "name": "id",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": true,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "default_rpc",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": true,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "archive_rpc",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": true,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "type",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": true,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "block_time",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": true,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "Float"
+        },
+        {
+          "name": "native_curr_symbol",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": true,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "icon_url",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
         }
       ],
       "values": [],
@@ -993,7 +1073,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "ProjectDassetsSettings": {
+    "ProjectMinterSettings": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1086,13 +1166,13 @@ export const schema = {
           "type": "String"
         },
         {
-          "name": "dassets_settings",
+          "name": "minter_settings",
           "arguments": [],
           "isDeprecated": false,
           "noNull": true,
           "isArray": false,
           "noNullArrayValues": false,
-          "type": "ProjectDassetsSettings"
+          "type": "ProjectMinterSettings"
         },
         {
           "name": "syncer_settings",
@@ -1104,7 +1184,7 @@ export const schema = {
           "type": "ProjectSyncerSettings"
         },
         {
-          "name": "dassets_syncer_instance",
+          "name": "minter_syncer_instance",
           "arguments": [],
           "isDeprecated": false,
           "noNull": true,
@@ -1117,7 +1197,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "DassetsNft": {
+    "MinterNft": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1313,7 +1393,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "DassetsNftAssetInfo": {
+    "MinterNftAssetInfo": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1357,7 +1437,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "DassetsCheckoutSessionPriceEstimate": {
+    "MinterCheckoutSessionPriceEstimate": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1419,7 +1499,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "DassetsCheckoutSession": {
+    "MinterCheckoutSession": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1555,7 +1635,7 @@ export const schema = {
           "noNull": true,
           "isArray": false,
           "noNullArrayValues": false,
-          "type": "DassetsNftAssetInfo"
+          "type": "MinterNftAssetInfo"
         },
         {
           "name": "is_payed",
@@ -1600,7 +1680,7 @@ export const schema = {
           "noNull": false,
           "isArray": false,
           "noNullArrayValues": false,
-          "type": "DassetsCheckoutSessionPriceEstimate"
+          "type": "MinterCheckoutSessionPriceEstimate"
         },
         {
           "name": "stripe_pi_client_secret",
@@ -1778,7 +1858,7 @@ export const schema = {
     }
   },
   "inputs": {
-    "IDassetsNftsFilter": {
+    "IMinterNftsFilter": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
@@ -2148,20 +2228,20 @@ export const schema = {
           "type": "String"
         },
         {
-          "name": "dassets_settings",
+          "name": "minter_settings",
           "arguments": [],
           "isDeprecated": false,
           "noNull": false,
           "isArray": false,
           "noNullArrayValues": false,
-          "type": "IProjectDassetsSettingsUpdate"
+          "type": "IProjectMinterSettingsUpdate"
         }
       ],
       "values": [],
       "types": [],
       "implementedTypes": []
     },
-    "IProjectDassetsSettingsUpdate": {
+    "IProjectMinterSettingsUpdate": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
@@ -2292,7 +2372,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "IDassetsCheckoutSessionCreate": {
+    "IMinterCheckoutSessionCreate": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
@@ -2311,14 +2391,14 @@ export const schema = {
           "noNull": true,
           "isArray": false,
           "noNullArrayValues": false,
-          "type": "IDassetsCheckoutSessionCreateAssetInfo"
+          "type": "IMinterCheckoutSessionCreateAssetInfo"
         }
       ],
       "values": [],
       "types": [],
       "implementedTypes": []
     },
-    "IDassetsCheckoutSessionCreateAssetInfo": {
+    "IMinterCheckoutSessionCreateAssetInfo": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
@@ -2362,7 +2442,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "IDassetsCheckoutSessionUpdate": {
+    "IMinterCheckoutSessionUpdate": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {

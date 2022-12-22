@@ -26,16 +26,16 @@ However, if the players prefer, they are also free to pay with crypto. Regardles
 
 ## The Minter usage
 
-This code uses the `Dassets` class from the `@interact/dassets` module to mint an NFT (non-fungible token) on the blockchain. It creates a new `Dassets` instance by passing in an access key, and then calls the `mintNft()` method to mint the NFT. The `mintNft()` method takes an object containing the recipient's address, the local ID of the item being minted, and an idempotency key. After minting the NFT, the code sets up event listeners for `mint` and `transfer` events, which are fired when the NFT is minted or transferred to another wallet. When these events occur, the code updates the item's owner information in the database to reflect the changes on the blockchain.
+This code uses the `Minter` class from the `@interact/minter` module to mint an NFT (non-fungible token) on the blockchain. It creates a new `Minter` instance by passing in an access key, and then calls the `mintNft()` method to mint the NFT. The `mintNft()` method takes an object containing the recipient's address, the local ID of the item being minted, and an idempotency key. After minting the NFT, the code sets up event listeners for `mint` and `transfer` events, which are fired when the NFT is minted or transferred to another wallet. When these events occur, the code updates the item's owner information in the database to reflect the changes on the blockchain.
 
 ```javascript
-import { Dassets } from '@interact/dassets'
+import { Minter } from '@interact/minter'
 
-const dassets_client = new Dassets({
+const minter_client = new Minter({
   access_key: 'YOUR_ACCESS_KEY',
 })
 
-dassets_client.mintNft({
+minter_client.mintNft({
   to: '0x50612AeeDD1F110B16dAD5139ebE7D4200091c7c',
   local_token_id: 'your_item_local_id',
   idempotency_key: 'SOME_RANDOM_IDEMPOTENCY_KEY' // highly recommended to use
@@ -46,7 +46,7 @@ you can use either EventListener-style
 or webhooks to listen for events
 */
 
-dassets_client.on('mint', ({
+minter_client.on('mint', ({
   token_id, // blockchain id of the item
   local_token_id,
   to,
@@ -58,7 +58,7 @@ dassets_client.on('mint', ({
 })
 
 // this event is fired when an item is transferred to another wallet
-dassets_client.on('transfer', ({ token_id, to }) => {
+minter_client.on('transfer', ({ token_id, to }) => {
   const item = await Item.findOne({ chain_id: token_id });
   item.owner = to;
   await item.save();

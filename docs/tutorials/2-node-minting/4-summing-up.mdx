@@ -23,7 +23,7 @@ Now that we have a working checkout flow, we can expand our application by addin
   '',
   'app.get("/create-checkout", async (req, res) => {',
   '',
-  toJs('DassetsCheckoutSession', 'create', {
+  toJs('MinterCheckoutSession', 'create', {
     indent: 1,
     values: {
       'data.asset_info.id': 1,
@@ -33,7 +33,7 @@ Now that we have a working checkout flow, we can expand our application by addin
     },
   }),
   '  ',
-  '  res.redirect(dassets_checkout_session.url);',
+  '  res.redirect(minter_checkout_session.url);',
   '});',
   '',
   `${JS_EXAMPLE_SDK_VAR_NAME}.on("Minter.NftMinted", (event) => {`,
