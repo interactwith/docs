@@ -12,6 +12,6 @@ The grant award is based on factors such as your market reach, relevant geograph
 
 If you believe that you or your company are a good fit for the Marketing Grant Program, we invite you to apply by following the provided link. We look forward to working with you and helping you to drive the success of our company.
 
-L﻿INK TO PROGRAM QUESTIONAIRE IN WEBSITE
+# [Apply Here](https://interactwith.com/community/grants/marketing_program)
 
 ![](marketingprogram.5a96d151f876c30d73e9.png)
