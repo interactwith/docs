@@ -14,6 +14,8 @@ If you believe that your app development company, organization, or team is a goo
 
 We look forward to working with you and helping you to enhance your apps and create more engaging and immersive user experiences.
 
-L﻿INK TO DEVELOPER PROGRAM QUESTIONAIRE IN WEBSITE
+# [Apply Here](https://interactwith.com/community/grants/integration_program)
+
+[](https://interactwith.com/community/grants/integration_program)
 
 ![](integrprogram.1159167c9714d29115a2.png)
