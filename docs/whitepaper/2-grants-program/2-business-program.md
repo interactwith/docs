@@ -12,6 +12,6 @@ If you believe that you or your company are a good fit for the Business Grant Pr
 
 We look forward to working with you and helping you to drive the adoption of Web3 technology.
 
-L﻿INK TO PROGRAM QUESTIONAIRE IN WEBSITE
+# [Apply Here](https://interactwith.com/community/grants/business_program)
 
 ![](businessprogram.343e9a0ddebb5ee3ef64.png)
