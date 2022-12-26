@@ -18,10 +18,7 @@ In addition to these fully supported chains, the InteractWith API is also planni
 | Polygon | polygon | mainnet |
 | Mumbai Testnet | mumbai | testnet |
 | Avalanche | avalanche | mainnet |
-| Fuji Testnet | fuji | testnet |
-| Fantom | fantom | mainnet |
-| Fantom Testnet | fantom-testnet | testnet |
-| xDai | xDai | mainnet |
-| xDai Testnet | xDai-testnet | testnet |
+| Solana Devnet | solana-devnet | testnet |
+| Solana | solana | mainnet |
 
 We are excited to be adding these new chains to the InteractWith API and are working hard to make them available as soon as possible. Stay tuned for updates on the availability of these chains, and check the InteractWith API Reference for the latest information on supported chains.
