@@ -10,6 +10,6 @@ The Integration Grant Program is designed to provide advanced app developers, co
 
 If you think you are a good fit for the Community Program, InteractWith invites you to apply and be in direct contact with our team for further steps and discussions.
 
-L﻿INK TO  PROGRAM QUESTIONAIRE IN WEBSITE
+# [Apply Here](https://interactwith.com/community/grants/community_program)
 
 ![](communityprogram.83b5c2b45ab60d7b2002.png)
