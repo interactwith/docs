@@ -39,6 +39,22 @@ export const schema = {
             "isArray": false,
             "noNullArrayValues": false,
             "type": "IMinterNftsFilter"
+          },
+          {
+            "name": "pagination",
+            "isDeprecated": false,
+            "noNull": false,
+            "isArray": false,
+            "noNullArrayValues": false,
+            "type": "IPagination"
+          },
+          {
+            "name": "sort",
+            "isDeprecated": false,
+            "noNull": false,
+            "isArray": false,
+            "noNullArrayValues": false,
+            "type": "ISort"
           }
         ],
         "isDeprecated": false,
@@ -635,8 +651,8 @@ export const schema = {
         "value": "A network scalar. See https://docs.interactwith.com/docs/getting-started/supported-chains for the full list of supported networks. (type: string) (example: \"eth\")",
         "block": true,
         "loc": {
-          "start": 1082,
-          "end": 1252
+          "start": 1101,
+          "end": 1271
         }
       },
       "fields": [],
@@ -651,8 +667,8 @@ export const schema = {
         "value": "A simple Address parser (type: string) (example: \"0x509016ec41c0F4b3072cA7c000034845163ECA0E\")",
         "block": true,
         "loc": {
-          "start": 1269,
-          "end": 1371
+          "start": 1288,
+          "end": 1390
         }
       },
       "fields": [],
@@ -667,8 +683,8 @@ export const schema = {
         "value": "A keccak256 scalar. (type: string) (example: \"0xbbdf3616512df59a06f9c800ac8da843b3a0926340249b3910b18d7d64992124\")",
         "block": true,
         "loc": {
-          "start": 1388,
-          "end": 1510
+          "start": 1407,
+          "end": 1529
         }
       },
       "fields": [],
@@ -683,8 +699,8 @@ export const schema = {
         "value": "The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).",
         "block": true,
         "loc": {
-          "start": 1529,
-          "end": 1685
+          "start": 1548,
+          "end": 1704
         }
       },
       "fields": [],
@@ -699,8 +715,8 @@ export const schema = {
         "value": "Void type (type: boolean) (example: true)",
         "block": true,
         "loc": {
-          "start": 6190,
-          "end": 6237
+          "start": 6456,
+          "end": 6503
         }
       },
       "fields": [],
@@ -893,6 +909,15 @@ export const schema = {
         },
         {
           "name": "icon_url",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "scan_url",
           "arguments": [],
           "isDeprecated": false,
           "noNull": false,
@@ -1875,6 +1900,58 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
+    "IPagination": {
+      "type": "InputObjectTypeDefinition",
+      "fields": [
+        {
+          "name": "take",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "Int"
+        },
+        {
+          "name": "page",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "Int"
+        }
+      ],
+      "values": [],
+      "types": [],
+      "implementedTypes": []
+    },
+    "ISort": {
+      "type": "InputObjectTypeDefinition",
+      "fields": [
+        {
+          "name": "direction",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "SortDirection"
+        },
+        {
+          "name": "by_field",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        }
+      ],
+      "values": [],
+      "types": [],
+      "implementedTypes": []
+    },
     "ISyncerEventsFilter": {
       "type": "InputObjectTypeDefinition",
       "fields": [
@@ -1912,6 +1989,24 @@ export const schema = {
           "isArray": false,
           "noNullArrayValues": false,
           "type": "ObjectId"
+        },
+        {
+          "name": "type",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
+        },
+        {
+          "name": "search",
+          "arguments": [],
+          "isDeprecated": false,
+          "noNull": false,
+          "isArray": false,
+          "noNullArrayValues": false,
+          "type": "String"
         }
       ],
       "values": [],
@@ -2465,6 +2560,18 @@ export const schema = {
         }
       ],
       "values": [],
+      "types": [],
+      "implementedTypes": []
+    }
+  },
+  "enums": {
+    "SortDirection": {
+      "type": "EnumTypeDefinition",
+      "fields": [],
+      "values": [
+        "ASC",
+        "DESC"
+      ],
       "types": [],
       "implementedTypes": []
     }

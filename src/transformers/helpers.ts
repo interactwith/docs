@@ -40,13 +40,15 @@ export function recursiveParse(arr: any[]) {
       return {
         name: field.name,
         type: field.type,
-        test_value: mockValues(field, field.type)
+        test_value: mockValues(field, field.type),
+        is_optional: !field.noNull,
       };
     } else {
       return {
         name: field.name,
         type: field.type,
         fields: recursiveParse(combined_schema[field.type].fields),
+        is_optional: !field.noNull,
       };
     }
   });

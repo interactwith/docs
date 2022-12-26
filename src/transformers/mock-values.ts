@@ -6,7 +6,7 @@ function getRandElement(arr: any[]) {
 
 export function mockValues(field: any, type: string) {
 
-  const scalar = schema.scalars[type];
+  const primitive_type = schema.scalars[type] || schema.enums[type];
   let result = '';
 
   if (type === 'String') {
@@ -19,10 +19,12 @@ export function mockValues(field: any, type: string) {
     result = `${getRandElement(['true', 'false'])}`;
   } else if (type === 'ID') {
     result = `"${field.name}"`;
+  } else if (primitive_type.type === "EnumTypeDefinition") {
+    result = `"${getRandElement(primitive_type.values)}"`;
   } else {
 
-    // get example from scalar description (example: "example: 1234")
-    let example = scalar.description.value.match(/\(example: (.*)\)/);
+    // get example from primitive_type description (example: "example: 1234")
+    let example = primitive_type.description.value.match(/\(example: (.*)\)/);
 
     if (example) {
       result = `${example[1]}`
@@ -31,7 +33,7 @@ export function mockValues(field: any, type: string) {
     }
   }
 
-  result = `${result}${!field.noNull ? ' // optional' : ''}`
+  result = `${result}`
 
   return result;
 }

@@ -6,7 +6,9 @@ import GqlExample from '@site/src/components/codeblocks/GqlExample';
 
 # Minter Checkouts
 
-Minter Checkouts are a tool that is used to mint NFTs for your project. They serve as the entry point for creating NFTs.
+Minter Checkouts provide a simple and straightforward interface for creating NFTs, allowing users to specify details such as the name, symbol, and total supply of the NFT, as well as any additional metadata that they want to include. Once the NFT has been created, users can then mint new tokens and sell them on the market.
+
+## Methods
 
 ### Creating a Checkout
 
@@ -19,7 +21,6 @@ To create a Minter Checkout, you can use the following code snippet:
 <TabItem value="gql" label="GraphQL">
 <GqlExample resource="MinterCheckoutSession" method="create"/>
 </TabItem>
-
 </Tabs>
 
 ### Getting a Checkout
@@ -35,3 +36,37 @@ To retrieve a Minter Checkout, you can use the following code snippet:
 </TabItem>
 
 </Tabs>
+
+## MinterCheckoutSession Object
+
+- `created_at` - The timestamp of when the checkout session was created.
+- `updated_at` - The timestamp of when the checkout session was last updated.
+- `id` - The unique identifier for the checkout session.
+- `project` - The project that the NFT belongs to.
+- `address` - The Ethereum address of the user who is purchasing the NFT.
+- `mint_tx` - The transaction hash of the minting transaction, if the NFT has been minted.
+- `mint_token_id` - The unique identifier for the NFT on the blockchain, if the NFT has been minted.
+- `mint_request_id` - The unique identifier for the mint request, if the NFT has not yet been minted.
+- `payment_id` - The unique identifier for the payment associated with the checkout session.
+- `payment_expires_at` - The timestamp of when the payment associated with the checkout session will expire.
+- `network` - The blockchain network that the NFT is on.
+- `contract_type` - The type of contract used for the NFT.
+- `is_succeeded` - A boolean value indicating whether the checkout session has succeeded (the NFT has been minted).
+- `expires_at` - The timestamp of when the checkout session will expire.
+- `asset_info` - An object containing information about the NFT being purchased
+- `asset_info.id` - The unique identifier for the NFT within the project.
+- `asset_info.name` - The name of the NFT.
+- `asset_info.description` - The description of the NFT.
+- `asset_info.image_url` - The URL of an image for the NFT.
+- `is_payed` - A boolean value indicating whether the payment for the NFT has been completed.
+- `url` - The URL of the checkout page for the NFT.
+- `is_minted` - A boolean value indicating whether the NFT has been minted.
+- `is_expired` - A boolean value indicating whether the checkout session has expired.
+- `price_estimation` - An object containing information about the estimated cost of the NFT purchase
+- `price_estimation.price` - The price of the NFT in the project's default currency.
+- `price_estimation.total_eth` - The total amount of ETH required for the purchase, including the cost of gas.
+- `price_estimation.eth_price` - The current price of ETH in the project's default currency.
+- `price_estimation.gas_price` - The current gas price in Gwei.
+- `price_estimation.gas` - The estimated gas cost for the purchase.
+- `price_estimation.slippage` - The maximum allowed price slippage for the purchase.
+- `stripe_pi_client_secret` - The client secret for the Stripe payment intent, if the payment method is Stripe. This field is only once the payment has been attached to the checkout session.

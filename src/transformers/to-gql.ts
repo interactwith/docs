@@ -37,10 +37,13 @@ function recursiveParseToGqlArgs(fields: any[], level = 0): string {
   const indent = '  '.repeat(level);
 
   return fields.map(field => {
+
+    const is_optional = field.is_optional ? ' # optional' : '';
+
     if(field.fields) {
-      return `${indent}${field.name}: {\n${recursiveParseToGqlArgs(field.fields, level + 1)}\n${indent}}`;
+      return `${indent}${field.name}: {${is_optional}\n${recursiveParseToGqlArgs(field.fields, level + 1)}\n${indent}}`;
     } else {
-      return indent + field.name + ': ' + field.test_value;
+      return indent + field.name + ': ' + field.test_value + is_optional;
     }
   }).join('\n');
 

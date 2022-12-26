@@ -8,6 +8,10 @@ The InteractWith API supports a wide range of different blockchain networks, whi
 | Goerli | goerli | testnet |
 | BNB Smart Chain | bnb | mainnet |
 | BNB Smart Chain Testnet | bnb-testnet | testnet |
+| Aptos | aptos | mainnet |
+| Sui | sui | mainnet |
+| Starkex | starkex | mainnet |
+| Immutable X | immx | mainnet |
 
 These chains are the ones that are currently fully supported and can be used with the InteractWith API.
 

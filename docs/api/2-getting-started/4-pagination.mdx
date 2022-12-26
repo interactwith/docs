@@ -1,0 +1,109 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import JsExample from '@site/src/components/codeblocks/JsExample';
+import GqlExample from '@site/src/components/codeblocks/GqlExample';
+import { toJs } from '@site/src/transformers/to-js';
+import { toGql } from '@site/src/transformers/to-gql';
+import CodeBlock from '@theme/CodeBlock';
+
+# Pagination
+
+Pagination is a common pattern in API design that allows you to split large lists of data into smaller, more manageable chunks. This can be especially useful when working with large datasets that might otherwise overwhelm your application with too much data.
+
+The InteractWith API supports pagination to make it easier to work with large lists of items. By using the `pagination` argument, you can control the number of items returned by a query and the page of results that you want to retrieve.
+
+## How to Use Pagination
+
+To paginate the results of a query, you can use the `pagination` argument. The `pagination` argument has two fields: `page` and `take`.
+
+The `page` field represents the page number, and the `take` field represents the number of items per page. By default, the `page` field is set to `1` and the `take` field is set to `10`.
+
+You can customize the pagination of your results by setting the `page` and `take` fields to different values. For example, if you want to retrieve the second page of results with 20 items per page, you could set the `page` field to `2` and the `take` field to `20`.
+
+It is important to note that the `take` field has a maximum value of `100`. If you set the `take` field to a value greater than `100`, the API will return an error. This is to prevent excessively large responses that could impact the performance of your application.
+
+The `page` and `take` fields are both optional, so you can choose to use one or both of them in your queries. If you don't specify a value for these fields, the API will use the default values of `1` and `10`, respectively.
+
+## Sorting and Ordering
+
+In addition to pagination, the InteractWith API also supports sorting and ordering of results. You can use the `direction` and `by_field` arguments to specify how you want the results to be sorted.
+
+The direction argument can be set to either `ASC` (ascending) or `DESC` (descending) and determines the order in which the results are returned. The `by_field` argument specifies the field by which the results should be sorted.
+
+For example, to sort the results in ascending order by the `name` field, you could use the following arguments:
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+<CodeBlock language="js">
+{[
+  toJs('MinterNft', 'select', {
+    hide_optional: true,
+    values: {
+      'sort.direction': "\"ASC\"",
+      'sort.by_field': "\"name\"",
+    },
+  })
+].join('\n')}
+</CodeBlock>
+</TabItem>
+<TabItem value="gql" label="GraphQL">
+<CodeBlock language="graphql">
+{[
+  toGql('MinterNft', 'select', {
+    hide_optional: true,
+    values: {
+      'sort.direction': "\"ASC\"",
+      'sort.by_field': "\"name\"",
+    },
+  })
+].join('\n')}
+</CodeBlock>
+</TabItem>
+</Tabs>
+
+## Example
+
+Here's an example of how you can use pagination, sorting, and ordering in a query to retrieve the third page of results with 15 items per page, sorted in descending order by the `id` field:
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+<CodeBlock language="js">
+{[
+  toJs('MinterNft', 'select', {
+    hide_optional: true,
+    values: {
+      'sort': "/* ... */",
+      'pagination.take': "15",
+      'pagination.page': "3",
+    },
+  })
+].join('\n')}
+</CodeBlock>
+</TabItem>
+<TabItem value="gql" label="GraphQL">
+<CodeBlock language="graphql">
+{[
+  toGql('MinterNft', 'select', {
+    hide_optional: true,
+    values: {
+      'sort.direction': "\"ASC\"",
+      'sort.by_field': "\"name\"",
+    },
+  })
+].join('\n')}
+</CodeBlock>
+</TabItem>
+</Tabs>
+
+This example would retrieve the third page of results with 15 items per page, sorted in descending order by the `id` field.
+
+## Tips for Working with Large Datasets
+
+When working with large datasets, it's important to be mindful of the performance of your application and the impact of the data on your server and network resources. Here are a few tips for working with large datasets:
+
+- Use pagination to break up large lists of data into smaller chunks.
+- Be selective about the data you retrieve and only request the data you need.
+- Cache data when appropriate to reduce the number of API requests and improve performance.
+- Monitor your server and network resources to ensure that they are not being overwhelmed by large amounts of data.
+
+By following these tips, you can ensure that your application can efficiently work with large datasets and deliver a smooth user experience.

@@ -55,12 +55,21 @@ const main = async () => {
   }
 
 
+  const enum_types = {};
+  for (const key in parsed_schema) {
+    if (parsed_schema[key].type === 'EnumTypeDefinition') {
+      enum_types[key] = parsed_schema[key];
+    }
+  }
+
+
   const result_object = {
     queries: parsed_schema['Query'],
     mutations: parsed_schema['Mutation'],
     scalars: scalar_types,
     objects: object_types,
     inputs: input_types,
+    enums: enum_types,
     interfaces: {},
   };
 

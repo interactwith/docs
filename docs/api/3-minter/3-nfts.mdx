@@ -5,19 +5,21 @@ import GqlExample from '@site/src/components/codeblocks/GqlExample';
 
 # NFTs
 
-Once you have minted an NFT through a Minter Checkout, you can access it through the following queries. Due to the immutability of NFTs, you are not able to make any changes to them. You can only query them.
+Once you have minted an NFT through a Minter Checkout, you can access it through various queries in order to retrieve information about the NFT. Since NFTs are immutable, you are not able to make any changes to them. You can only query them in order to retrieve information about the NFT, such as its unique identifier, metadata, and any associated content
+
+## Methods
 
 ### Selecting NFTs
 
 To select NFTs, you can use the following code snippet:
 
 <Tabs>
-<TabItem value="js" label="JavaScript">
-<JsExample resource="MinterNft" method="select"/>
-</TabItem>
-<TabItem value="gql" label="GraphQL">
-<GqlExample resource="MinterNft" method="select"/>
-</TabItem>
+  <TabItem value="js" label="JavaScript">
+    <JsExample resource="MinterNft" method="select"/>
+  </TabItem>
+  <TabItem value="gql" label="GraphQL">
+    <GqlExample resource="MinterNft" method="select"/>
+  </TabItem>
 </Tabs>
 
 ### Getting an NFT
@@ -33,3 +35,14 @@ To get a specific NFT, you can use the following code snippet:
 </TabItem>
 
 </Tabs>
+
+## MinterNft Object
+
+- `id`: The unique identifier for the event.
+- `project`: The project that the NFT belongs to.
+- `owner`: The address of the owner of the NFT.
+- `mint_tx`: The transaction hash of the minting transaction.
+- `network`: The blockchain network that the NFT is on.
+- `token_id`: The unique identifier for the NFT on the blockchain.
+- `owner_synced_at`: The timestamp of when the NFT's ownership was synced with the blockchain.
+- `mint_request_id`: The unique identifier for the mint request.

@@ -11,7 +11,7 @@ export default function GqlExample(props): JSX.Element {
   const code = toGql(resource, method);
   
   return (
-    <CodeBlock language="js" showLineNumbers>
+    <CodeBlock language="graphql" showLineNumbers>
       { code }
     </CodeBlock>
   );
