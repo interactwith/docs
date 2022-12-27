@@ -8,10 +8,6 @@ The InteractWith API supports a wide range of different blockchain networks, whi
 | Goerli | goerli | testnet |
 | BNB Smart Chain | bnb | mainnet |
 | BNB Smart Chain Testnet | bnb-testnet | testnet |
-| Aptos | aptos | mainnet |
-| Sui | sui | mainnet |
-| Starkex | starkex | mainnet |
-| Immutable X | immx | mainnet |
 
 These chains are the ones that are currently fully supported and can be used with the InteractWith API.
 
@@ -24,5 +20,9 @@ In addition to these fully supported chains, the InteractWith API is also planni
 | Avalanche | avalanche | mainnet |
 | Solana Devnet | solana-devnet | testnet |
 | Solana | solana | mainnet |
+| Aptos | aptos | mainnet |
+| Sui | sui | mainnet |
+| Starkex | starkex | mainnet |
+| Immutable X | immx | mainnet |
 
 We are excited to be adding these new chains to the InteractWith API and are working hard to make them available as soon as possible. Stay tuned for updates on the availability of these chains, and check the InteractWith API Reference for the latest information on supported chains.
