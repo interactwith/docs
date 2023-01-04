@@ -12,7 +12,7 @@ Here is an example of how you might include the API key in a request using the c
 curl -X POST https://api.interactwith.com/graphql \
   -H 'Content-Type: application/json' \
   -H 'X-API-KEY: your-api-key-here' \
-  -d '{ "query": "query { currentUser { name } }" }'
+  -d '{ "query": "query { me { name } }" }'
 ```
 
 In this example, the `-H` flag is used to add a header to the request, and the `X-API-KEY` header is set to the value of your API key. You will need to replace `your-api-key-here` with the actual value of your API key.

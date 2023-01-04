@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'InteractWith',
+  title: 'InteractWith Docs',
   tagline: 'Forget about blockchain complexity',
   url: 'https://docs.interactwith.com',
   baseUrl: '/',

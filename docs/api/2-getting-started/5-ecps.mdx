@@ -1,0 +1,58 @@
+import CodeBlock from '@theme/CodeBlock';
+import { JS_EXAMPLE_SDK_VAR_NAME } from '@site/src/constants';
+
+# About ECPs
+
+ECPs (Event Consistency Provider) are a type of instance that is used to maintain consistency between InteractWith and your backend. They are responsible for notifying your backend about certain events that occur on InteractWith. For example, when an NFT is transferred to another wallet, the ECP will notify your backend about this event and wait for your backend to confirm that the event has been processed. If your backend confirms that the event has been processed, the ECP will mark the event as processed and will not notify your backend about it again. If your backend does not confirm that the event has been processed, the ECP will notify your backend about the event again after a certain amount of time has passed.
+
+## ECP Types
+
+There are two types of ECPs that you can use with the InteractWith API:
+
+### Webhook ECP
+
+Webhook ECPs are ECPs that notify your backend about events by sending HTTP requests to your backend. You can use Webhook ECPs to notify your backend about events that occur on InteractWith.
+
+### Websocket ECP
+
+Websocket ECPs are ECPs that notify your backend about events by sending messages to your backend over a WebSocket connection. You can use Websocket ECPs to notify your backend about events that occur on InteractWith. This type of ECP is useful for private networks, local development, and other situations where you cannot expose your backend to the Internet.
+
+Here is an example of how you might use an ECP in your code:
+
+**Example:**
+
+<CodeBlock language="js">
+{[
+  `const ecp_listener = ${JS_EXAMPLE_SDK_VAR_NAME}.createEcpListener("605f1b9e9b9b9b9b9b9b9b9b");`,
+  '',
+  'ecp_listener.on("Minter.NftTransferred", (event) => {',
+  '  console.log(event);',
+  '});',
+].join('\n')}
+</CodeBlock>
+
+:::tip
+
+It is important to make sure that your event handlers are idempotent, which means that they should not process the same event multiple times. You can use the event.id field to identify the event and ensure that it is not processed more than once. The same applies to Webhook ECPs.
+
+:::
+
+Here is an example of the response that you might receive when an ECP sends an event to your backend:
+
+**Response:**
+
+```js
+{
+  id: 'EVENT_ID',
+  event_emitter_id: 'EVENT_EMITTER_ID',
+  event_type: 'Minter.NftTransferred',
+  event_data: {
+    nft_id: 'NFT_ID',
+    from: 'FROM_WALLET_ID',
+    to: 'TO_WALLET_ID',
+  },
+  processed: false,
+  created_at: '2021-07-01T12:00:00.000Z',
+  updated_at: '2021-07-01T12:00:00.000Z',
+}
+```

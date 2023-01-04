@@ -13,6 +13,7 @@ import {
   snakeCase,
 } from "change-case";
 import { JS_EXAMPLE_SDK_VAR_NAME } from '../constants';
+import { plural } from 'pluralize';
 
 interface ToJsOpts {
   indent?: number;
@@ -46,8 +47,15 @@ export function toJs(resource: string, method: string, opts: ToJsOpts = {}): str
     }
   }).join(', ');
 
+  const js_method = ([
+    'select', 
+    'delete_many', 
+    'update_many',
+    'create_many',
+  ].includes(method) ? plural(camelCase(resource)) : camelCase(resource)) + pascalCase(method.replace('_many', ''));
+
   const code = [
-    `${indent_str}const ${variable_name} = await ${JS_EXAMPLE_SDK_VAR_NAME}.${snaked_resource}.${method}(${args});`,
+    `${indent_str}const ${variable_name} = await ${JS_EXAMPLE_SDK_VAR_NAME}.${js_method}(${args});`,
   ].join('\n');
 
   return code;

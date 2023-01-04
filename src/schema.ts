@@ -90,17 +90,17 @@ export const schema = {
             "noNull": true,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "ISyncerEventsFilter"
+            "type": "IEcpEventsFilter"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": true,
         "noNullArrayValues": true,
-        "type": "SyncerEvent"
+        "type": "EcpEvent"
       },
       {
-        "name": "event_emitter_instances",
+        "name": "ecps",
         "arguments": [
           {
             "name": "filter",
@@ -108,17 +108,17 @@ export const schema = {
             "noNull": true,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "IEventEmitterInstancesFilter"
+            "type": "IEcpsFilter"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": true,
         "noNullArrayValues": true,
-        "type": "EventEmitterInstance"
+        "type": "Ecp"
       },
       {
-        "name": "event_emitter_instance",
+        "name": "ecp",
         "arguments": [
           {
             "name": "id",
@@ -133,7 +133,7 @@ export const schema = {
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "EventEmitterInstance"
+        "type": "Ecp"
       },
       {
         "name": "syncer_instances",
@@ -315,7 +315,7 @@ export const schema = {
         "type": "Void"
       },
       {
-        "name": "eventEmitterInstanceUpdate",
+        "name": "ecpUpdate",
         "arguments": [
           {
             "name": "id",
@@ -331,17 +331,17 @@ export const schema = {
             "noNull": true,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "IEventEmitterInstanceUpdate"
+            "type": "IEcpUpdate"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "EventEmitterInstance"
+        "type": "Ecp"
       },
       {
-        "name": "eventEmitterInstanceCreate",
+        "name": "ecpCreate",
         "arguments": [
           {
             "name": "data",
@@ -349,14 +349,14 @@ export const schema = {
             "noNull": true,
             "isArray": false,
             "noNullArrayValues": false,
-            "type": "IEventEmitterInstanceCreate"
+            "type": "IEcpCreate"
           }
         ],
         "isDeprecated": false,
         "noNull": true,
         "isArray": false,
         "noNullArrayValues": false,
-        "type": "EventEmitterInstance"
+        "type": "Ecp"
       },
       {
         "name": "syncerInstanceCreate",
@@ -770,7 +770,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "EventEmitterInstance": {
+    "Ecp": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1320,7 +1320,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "SyncerEvent": {
+    "EcpEvent": {
       "type": "ObjectTypeDefinition",
       "fields": [
         {
@@ -1387,7 +1387,7 @@ export const schema = {
           "type": "JSON"
         },
         {
-          "name": "event_emitter_instance",
+          "name": "ecp",
           "arguments": [],
           "isDeprecated": false,
           "noNull": true,
@@ -1952,11 +1952,11 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "ISyncerEventsFilter": {
+    "IEcpEventsFilter": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
-          "name": "event_emitter_instance",
+          "name": "ecp",
           "arguments": [],
           "isDeprecated": false,
           "noNull": false,
@@ -1978,7 +1978,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "IEventEmitterInstancesFilter": {
+    "IEcpsFilter": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
@@ -2056,7 +2056,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "IEventEmitterInstanceUpdate": {
+    "IEcpUpdate": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
@@ -2082,7 +2082,7 @@ export const schema = {
       "types": [],
       "implementedTypes": []
     },
-    "IEventEmitterInstanceCreate": {
+    "IEcpCreate": {
       "type": "InputObjectTypeDefinition",
       "fields": [
         {
