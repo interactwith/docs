@@ -10,7 +10,6 @@ The Community Grant Program is an opportunity for those interested in community 
 
 If selected, you will have the chance to work closely with our team and take an active role in the community.
 
-\
-[Apply Here](https://interactwith.com/community/grants/community_program)
+## [Apply Here](https://interactwith.com/community/grants/community_program)
 
 ![](communityprogram.83b5c2b45ab60d7b2002.png)
