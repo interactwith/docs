@@ -17,6 +17,12 @@
 }
 
 @font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Black.ttf');
+  font-weight: 900;
+}
+
+@font-face {
   font-family: 'SatoshiVariable';
   src: url('/fonts/Satoshi-Variable.ttf');
   font-weight: 400;
@@ -90,4 +96,125 @@
   height: 20px;
   display: inline-block;
   margin-right: 5px;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-page-cnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.action-btn {
+  background-color: var(--ifm-background-color);
+  width: 340px;
+  height: 340px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  margin-left: 30px;
+}
+
+.action-btn:first-child {
+  margin-left: 0;
+}
+
+.action-btn a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  
+}
+
+.action-btn svg {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--ifm-background-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.action-btn .title {
+  font-size: 3em;
+  font-weight: 900;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 10px;
+}
+
+.action-btn .description {
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--ifm-font-color-base);
+  opacity: 0.7;
+  text-align: center;
+}
+
+.action-btn:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px);
+}
+
+.action-btn:hover svg {
+  color: var(--ifm-color-primary);
+}
+
+@media (max-width: 1100px) {
+  .action-btn {
+    width: 280px;
+    height: 280px;
+    font-size: 0.8em;
+  }
+}
+
+
+@media (max-width: 980px) {
+  .action-btn {
+    width: 240px;
+    height: 240px;
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 800px) {
+  .action-btn {
+    width: 200px;
+    height: 200px;
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-page-cnt {
+    padding-top: 80px;
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 280px;
+    height: 280px;
+    font-size: 0.8em;
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
 }
