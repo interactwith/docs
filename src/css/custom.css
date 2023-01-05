@@ -131,7 +131,7 @@
 }
 
 .action-btn a {
-  padding: 30px;
+  padding: 20px;
   position: absolute;
   top: 0;
   left: 0;
@@ -201,7 +201,7 @@
   .action-btn {
     width: 200px;
     height: 200px;
-    font-size: 0.6em;
+    font-size: 0.55em;
   }
 }
 
