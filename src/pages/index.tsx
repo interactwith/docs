@@ -19,7 +19,7 @@ function Actions() {
               Whitepaper
             </div>
             <div className="description">
-              Learn more about the project
+              Learn about core concepts of the project, and how it works under the hood
             </div>
 
             <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ function Actions() {
               Tutorials
             </div>
             <div className="description">
-              Learn more about the project
+              Get started with the project as quickly as possible, with step-by-step guides
             </div>
 
             <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,10 +48,10 @@ function Actions() {
             to="/docs/api/intro"
           >
             <div className="title">
-              API
+              API ref.
             </div>
             <div className="description">
-              Learn more about the project
+              Explore the API reference, and learn how to interact with our API
             </div>
 
             <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
