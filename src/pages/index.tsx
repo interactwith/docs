@@ -19,7 +19,7 @@ function Actions() {
               Whitepaper
             </div>
             <div className="description">
-              Learn about core concepts of the project, and how it works under the hood
+              Learn about core concepts of the project, and how it works
             </div>
 
             <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
